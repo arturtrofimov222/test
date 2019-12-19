@@ -1,0 +1,36 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.contacts-us {
+  text-align: center;
+
+  &__container {
+	max-width: 780px;
+	margin: 0 auto;
+	padding: 70px 15px;
+	@media($mobile-widths-only) {
+	  padding: 45px 15px;
+	}
+
+	p {
+	  text-shadow: none;
+	  color: $c_black2;
+	  padding-top: 30px;
+	  padding-bottom: 37px;
+	}
+
+	.btn-default {
+	  width: 285px;
+	  height: 60px;
+	  margin: 0 auto;
+	  @media($tablet-widths-only) {
+		width: 220px;
+		height: 45px;
+	  }
+	  @media($mobile-widths-only) {
+		width: 190px;
+		height: 40px;
+	  }
+	}
+  }
+}

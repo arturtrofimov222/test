@@ -1,0 +1,174 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.header {
+  background: url(../img/jared-sluyter-3428812x.jpg) no-repeat center center / cover;
+  font-family: $f_lato;
+
+  &__top--container {
+	max-width: 1140px;
+	margin: 0 auto;
+	@include flex-between;
+	align-items: start;
+	padding: 41px 15px;
+
+	@media($mobile-widths-only) {
+	  flex-direction: column;
+	  align-items: center;
+	}
+
+	.logo {
+	  img {
+		@media($mobile-widths-only) {
+		  width: 100%;
+		  height: 100%;
+		}
+	  }
+
+	  @media($mobile-widths-only) {
+		max-width: 300px;
+	  }
+	}
+  }
+
+  &__nav {
+	display: flex;
+	margin-top: 7px;
+	@media($mobile-widths-only) {
+	  padding-top: 30px;
+	}
+
+	a {
+	  color: $c_black;
+	  font-size: 16px;
+	  font-weight: 400;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  margin: 0 16px;
+	  padding: 0 0 40px 0;
+	  border-bottom: 5px solid transparent;
+	  @media($mobile-widths-only) {
+		font-size: 14px;
+		padding-bottom: 5px;
+	  }
+	}
+
+	a.active, a:hover, a:focus {
+	  color: $c_white;
+	  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+	  border-bottom: 5px solid $c_blue;
+	}
+
+	&--dropdown {
+	  background: $c_blue;
+	  width: 100%;
+	  max-width: 300px;
+	  position: absolute;
+	  left: 0;
+	  bottom: -120px;
+	  padding: 20px 0 20px;
+	  visibility: hidden;
+	  @media($mobile-widths-only) {
+		bottom: -145px;
+	  }
+
+	  a {
+		display: block;
+		line-height: 25px;
+		padding: 0 20px;
+		margin: 0;
+		position: relative;
+
+		&:hover {
+		  color: $c_white;
+		}
+
+		&:hover ~ .sub-menu {
+		  visibility: visible;
+		}
+	  }
+	}
+
+	&--dropdown.visible {
+	  visibility: visible;
+	}
+
+	&--dropdown--wrap {
+	  position: relative;
+	}
+
+	&--dropdown--sub {
+	  position: relative;
+
+	  .sub-menu {
+		position: absolute;
+		background: $c_blue;
+		width: 100%;
+		max-width: 300px;
+		left: -100px;
+		visibility: hidden;
+		top: -5px;
+		padding: 20px 0 20px;
+
+		&:hover {
+		  visibility: visible;
+		}
+	  }
+	}
+  }
+
+  &__content {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 94px 15px 127px 15px;
+
+	@media($mobile-widths-only) {
+	  padding: 50px 15px;
+	}
+
+	&--info {
+	  max-width: 460px;
+	  @media($mobile-widths-only) {
+		max-width: 100%;
+		text-align: center;
+	  }
+
+	  h1 {
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+		color: $c_white;
+		font-size: 48px;
+		font-weight: 900;
+		padding-bottom: 21px;
+		@media($mobile-widths-only) {
+		  font-size: 40px;
+		}
+	  }
+
+	  p {
+		padding: 13px 0 40px;;
+	  }
+
+	  hr {
+		width: 96px;
+		height: 4px;
+		background-color: $c_blue;
+		margin: 0 auto;
+		border: none;
+	  }
+
+	  .btn-default {
+		width: 285px;
+		height: 60px;
+		@media($tablet-widths-only) {
+		  width: 220px;
+		  height: 45px;
+		}
+		@media($mobile-widths-only) {
+		  margin: 0 auto;
+		  width: 190px;
+		  height: 40px;
+		}
+	  }
+	}
+  }
+}
