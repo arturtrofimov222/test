@@ -27,6 +27,8 @@
 	.img-wrap {
 	  max-width: 948px;
 	  padding-top: 85px;
+	  display: flex;
+	  align-items: flex-end;
 	  @media($mobile-widths-only) {
 		padding-top: 20px;
 	  }
